@@ -124,7 +124,7 @@ class Tree {
 
     depth(node, root = this.root){
         let depth = 0;
-        if (node == null || root == null) return;
+        if (node == null || root == null) return ;
         else if (root.data == node || 
                 (depth = this.depth(node,root.left)) >=0 ||
                 (depth = this.depth(node,root.right)>=0)){
@@ -186,7 +186,8 @@ function removeDuplicates(array){
 
 
 
-let array = [1, 7, 4, 23, 8, 9, 3, 5, 1];
+// let array = [1, 7, 4, 23, 8, 9, 3, 5, 1];
+let array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let tree = new Tree(array);
 prettyPrint(tree.root);
 // tree.insert(10,tree.root);
@@ -205,13 +206,14 @@ prettyPrint(tree.root);
 // console.log(maxHeight);
 // let maxDepth = tree.depth(4,tree.root);
 // console.log(maxDepth);
-tree.insert(25,tree.root);
-tree.insert(28,tree.root);
-tree.insert(30,tree.root);
-tree.insert(31,tree.root);
+// tree.insert(25,tree.root);
+// tree.insert(28,tree.root);
+// tree.insert(30,tree.root);
+// tree.insert(31,tree.root);
 prettyPrint(tree.root);
 let balancedTree = tree.isBalanced(tree.root);
 console.log(balancedTree);
 let rebalanceTree = tree.rebalance();
 console.log(rebalanceTree);
 prettyPrint(rebalanceTree);
+console.log(tree.depth(7));
